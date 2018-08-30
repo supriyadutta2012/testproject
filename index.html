@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>DevOps Project Details</title>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+Project Configuration Details
+A. Development Instance
+a.1  Launch a instance where source code will be developed
+a.2  Install GIT, Apache2/HTTPD in the above Development Instance
+a.3  Create Local GIT Repository to hold the development
+a.4  Integrate local GIT Repository with GITHUB Public Repository
+a.5  Configure WEBHOOK to communicate with Jenkins server to automate Build and Test
+a.6  Configure GIT to automatically copy test file into AWS S3 Bucket to run Ansible Playbook 
+        from AWS S3 – via git-s3 Deploy tool	        
+
+B. Jenkins Server
+
+b.1  Install Jenkins, APACHE2/HTTPD
+b.2  Configure Jenkins and start Jenkins service
+b.3  Integrate Jenkins with GITHUB to automate Build and Test
+
+C. AWS S3
+
+c.1  Create bucket into AWS S3 to hold all the tested files being transferred from GITHUB
+c.2  Restrict access to that S3 bucket
+c.3  Upload Ansible Playbook file into respective S3 bucket to run it from there
+
+D. Ansible Controller
+
+d.1  Launch instance and configure Ansible Controller
+d.2  Configure /etc/hosts file
+d.3  Run Ansible Playbook from s3 to launch 3 EC2 instance (Application Servers)
+d.4  Run Ansible Playbook from s3 to launch 1 EC2 instance (DB Server)
+d.5  Run Ansible Playbook from s3 to Install and Configure Web Server into 3 App     lication Server Instance
+d.6  Run Ansible Playbook from s3 to perform patch management into DB Server and     Application Servers
+
+E. Load Balancing for Application Servers
+
+e.1  Configure Web Server in one of the Application Servers
+e.2  Configure s3 to access web sites from Web Server
+e.3  Configure Route 53, Load Balancer, CloudFront in that Web Server
+e.4  Test CloudFront if load balancing works between these 3 instances
+
+</body>
+</html>
+
